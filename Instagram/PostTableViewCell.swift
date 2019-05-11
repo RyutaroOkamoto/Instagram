@@ -51,7 +51,12 @@ class PostTableViewCell: UITableViewCell {
         let dateString = formatter.string(from: postData.date!)
         self.dateLabel.text = dateString
         
-        self.commentLabel.text = "\(postData.comment) : \(postData.name!)"
+        
+        var commentString = ""
+        for i in postData.comment{
+           commentString += "\(i)\n"
+        }
+        self.commentLabel.text = commentString
         
         
         if postData.isLiked {
